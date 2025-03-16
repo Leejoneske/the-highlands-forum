@@ -77,7 +77,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                                                                                                                                                                                                                                                     setIsSubmitting(false);
                                                                                                                                                                                                                                                       }
                                                                                                                                                                                                                                                       };
-}
+
   return (
     <section className="py-20 bg-gray-50" id="contact">
       <div className="section-container">
