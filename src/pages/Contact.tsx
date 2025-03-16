@@ -115,21 +115,21 @@ const Contact = () => {
                 <h3 className="text-xl font-semibold mb-4">Connect with me</h3>
                 <div className="flex space-x-4">
                   <a 
-                    href="#" 
+                    href="https://x.com/LeeJoneske1" 
                     className="p-3 bg-gray-100 hover:bg-highlands-light text-gray-700 hover:text-highlands-primary rounded-full transition-colors"
                     aria-label="Twitter"
                   >
                     <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z"></path></svg>
                   </a>
                   <a 
-                    href="#" 
+                    href="https://www.linkedin.com/in/lee-jones-kenya-630a00347" 
                     className="p-3 bg-gray-100 hover:bg-highlands-light text-gray-700 hover:text-highlands-primary rounded-full transition-colors"
                     aria-label="LinkedIn"
                   >
                     <svg className="h-5 w-5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                   </a>
                   <a 
-                    href="#" 
+                    href="https://github.com/Leejoneske" 
                     className="p-3 bg-gray-100 hover:bg-highlands-light text-gray-700 hover:text-highlands-primary rounded-full transition-colors"
                     aria-label="GitHub"
                   >
@@ -236,7 +236,7 @@ const Contact = () => {
           <div className="animate-on-scroll">
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-96">
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d100939.98555098464!2d-122.50764017511293!3d37.75781499718605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80859a6d00690021%3A0x4a501367f076adff!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1619825963008!5m2!1sen!2sus" 
+                src="https://maps.app.goo.gl/YZyXdD5fktqtW4yh6" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
