@@ -52,10 +52,10 @@ This project is built with:
 
 ```sh
 # Clone the repository
-git clone <YOUR_GIT_URL>
+git clone <https://github.com/Leejoneske/highlands-portfolio-helper/tree/main>
 
 # Navigate to the project directory
-cd <YOUR_PROJECT_NAME>
+cd <highlands-portfolio-helper>
 
 # Install dependencies
 npm install

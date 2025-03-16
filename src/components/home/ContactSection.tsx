@@ -37,10 +37,10 @@ const ContactSection = () => {
 
       // Using public IDs directly without env variables
       const response = await emailjs.send(
-        "service_y16i2wj",  // Service ID
-        "template_wjpihiq", // Template ID
+        "service_rjde88n",  // Service ID
+        "template_w4cn2wn", // Template ID
         templateParams,
-        "FGh3NiEkM9YVJ0pB0"  // Public Key
+        "d7LvaDJipq-t2-dQr"  // Public Key
       );
 
       if (response.status === 200) {
