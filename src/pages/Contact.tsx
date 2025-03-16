@@ -9,6 +9,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Mail, Phone, MapPin, Send } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
@@ -40,16 +41,37 @@ const Contact = () => {
   const onSubmit = async (data: ContactFormValues) => {
     setIsSubmitting(true);
     
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    
-    toast({
-      title: "Message sent!",
-      description: "Thanks for reaching out. I'll get back to you as soon as possible.",
-    });
-    
-    reset();
-    setIsSubmitting(false);
+    try {
+      const templateParams = {
+        from_name: data.name,
+        from_email: data.email,
+        subject: data.subject,
+        message: data.message,
+      };
+
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
+
+      if (response.status === 200) {
+        toast({
+          title: "Message sent!",
+          description: "Thanks for reaching out. I'll get back to you as soon as possible.",
+        });
+        reset();
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -94,7 +116,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Phone</h3>
-                    <p className="text-gray-700">+1 (234) 567-8900</p>
+                    <p className="text-gray-700">+254 (796) 890-417</p>
                     <p className="text-gray-500 text-sm">Monday - Friday, 9AM-6PM</p>
                   </div>
                 </div>
@@ -105,7 +127,7 @@ const Contact = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-lg mb-1">Location</h3>
-                    <p className="text-gray-700">San Francisco, CA</p>
+                    <p className="text-gray-700">Nairobi, KE 00100</p>
                     <p className="text-gray-500 text-sm">Available for remote work globally</p>
                   </div>
                 </div>
@@ -236,7 +258,7 @@ const Contact = () => {
           <div className="animate-on-scroll">
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-96">
               <iframe 
-                src="https://maps.app.goo.gl/YZyXdD5fktqtW4yh6" 
+                src="https://maps.app.goo.gl/JVDj5KfMBpZ8CTLJ6" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
