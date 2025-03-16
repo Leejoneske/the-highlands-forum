@@ -31,7 +31,7 @@ const ContactSection = () => {
         Host: process.env.NEXT_PUBLIC_SMTP_HOST, // SMTP server host
         Username: process.env.NEXT_PUBLIC_SMTP_USERNAME, // Your email address
         Password: process.env.NEXT_PUBLIC_SMTP_PASSWORD, // Your email password or app-specific password
-        To: 'your-email@example.com', // Replace with the recipient's email
+        To: 'johnwanderi202@outlook.com', // Replace with the recipient's email
         From: process.env.NEXT_PUBLIC_SMTP_USERNAME, // Sender's email address
         Subject: formState.subject, // Email subject
         Body: `Name: ${formState.name}\nEmail: ${formState.email}\nMessage: ${formState.message}`, // Email body
