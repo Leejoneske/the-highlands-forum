@@ -11,6 +11,15 @@ With over 5 years of experience in web and application development, I've had the
 
 Over the years, I've worked with startups, mid-sized companies, and enterprise clients, helping them bring their ideas to life through clean, efficient, and maintainable code. I believe in writing code that not only works well today but remains adaptable for tomorrow's challenges.
 
+My expertise includes:
+
+- Frontend Development (React, TypeScript, Next.js)
+- UI/UX Implementation
+- Responsive Web Design
+- API Integration
+- Code Optimization
+- Mobile-First Development
+
 ## Technologies Used
 
 This project is built with:
