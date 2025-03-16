@@ -1,11 +1,9 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Mail, Phone, Home, Send, CheckCircle } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
-import emailjs from '@emailjs/browser';
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -23,60 +21,49 @@ const ContactSection = () => {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
-  
-const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-      setIsSubmitting(true);
+    setIsSubmitting(true);
 
-        try {
-            // Dynamically import Email.js
-                const emailjs = (await import('@emailjs/browser')).default;
+    try {
+      // Send email using SMTP.js
+      await Email.send({
+        Host: process.env.NEXT_PUBLIC_SMTP_HOST, // SMTP server host
+        Username: process.env.NEXT_PUBLIC_SMTP_USERNAME, // Your email address
+        Password: process.env.NEXT_PUBLIC_SMTP_PASSWORD, // Your email password or app-specific password
+        To: 'your-email@example.com', // Replace with the recipient's email
+        From: process.env.NEXT_PUBLIC_SMTP_USERNAME, // Sender's email address
+        Subject: formState.subject, // Email subject
+        Body: `Name: ${formState.name}\nEmail: ${formState.email}\nMessage: ${formState.message}`, // Email body
+      });
 
-                    // Initialize Email.js
-                        emailjs.init("d7LvaDJipq-t2-dQr"); // Replace with your Public Key
+      setIsSuccess(true);
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
 
-                            const templateParams = {
-                                  from_name: formState.name,
-                                        from_email: formState.email,
-                                              subject: formState.subject,
-                                                    message: formState.message,
-                                                        };
-
-                                                            const response = await emailjs.send(
-                                                                  "service_rjde88n",  // Service ID
-                                                                        "template_w4cn2wn", // Template ID
-                                                                              templateParams
-                                                                                  );
-
-                                                                                      if (response.status === 200) {
-                                                                                            setIsSuccess(true);
-                                                                                                  toast({
-                                                                                                          title: "Message sent!",
-                                                                                                                  description: "Thank you for your message. I'll get back to you soon.",
-                                                                                                                        });
-
-                                                                                                                              // Reset form after 2 seconds
-                                                                                                                                    setTimeout(() => {
-                                                                                                                                            setFormState({
-                                                                                                                                                      name: '',
-                                                                                                                                                                email: '',
-                                                                                                                                                                          subject: '',
-                                                                                                                                                                                    message: ''
-                                                                                                                                                                                            });
-                                                                                                                                                                                                    setIsSuccess(false);
-                                                                                                                                                                                                          }, 2000);
-                                                                                                                                                                                                              }
-                                                                                                                                                                                                                } catch (error) {
-                                                                                                                                                                                                                    console.error('Failed to send email:', error);
-                                                                                                                                                                                                                        toast({
-                                                                                                                                                                                                                              title: "Failed to send message",
-                                                                                                                                                                                                                                    description: "There was an error sending your message. Please try again later.",
-                                                                                                                                                                                                                                          variant: "destructive",
-                                                                                                                                                                                                                                              });
-                                                                                                                                                                                                                                                } finally {
-                                                                                                                                                                                                                                                    setIsSubmitting(false);
-                                                                                                                                                                                                                                                      }
-                                                                                                                                                                                                                                                      };
+      // Reset form after 2 seconds
+      setTimeout(() => {
+        setFormState({
+          name: '',
+          email: '',
+          subject: '',
+          message: ''
+        });
+        setIsSuccess(false);
+      }, 2000);
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section className="py-20 bg-gray-50" id="contact">
