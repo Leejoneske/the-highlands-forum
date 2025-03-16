@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -251,19 +252,20 @@ const Contact = () => {
         </div>
       </section>
       
-      {/* Map Section */}
+      {/* Map Section - Updated with working embedded map for Nairobi */}
       <section className="py-16 bg-gray-50">
         <div className="section-container">
           <div className="animate-on-scroll">
             <div className="bg-white rounded-xl overflow-hidden shadow-md h-96">
               <iframe 
-                src="https://maps.app.goo.gl/YZyXdD5fktqtW4yh6" 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d63820.62791156896!2d36.765057399999996!3d-1.2972203!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f11655c311541%3A0x9dd769ac19experienced7d842!2sNairobi%2C%20Kenya!5e0!3m2!1sen!2sus!4v1715434223619!5m2!1sen!2sus" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
-                allowFullScreen 
+                allowFullScreen
                 loading="lazy"
                 title="Map Location"
+                referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
           </div>

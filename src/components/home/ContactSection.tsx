@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -93,7 +94,7 @@ const ContactSection = () => {
                   </div>
                   <div>
                     <h4 className="font-medium text-gray-900">Email</h4>
-                    <a href="johnwanderi202@gmail.com" className="text-gray-600 hover:text-highlands-primary transition">
+                    <a href="mailto:contact@highlandsforum.com" className="text-gray-600 hover:text-highlands-primary transition">
                       contact@highlandsforum.com
                     </a>
                   </div>
@@ -118,7 +119,7 @@ const ContactSection = () => {
                   <div>
                     <h4 className="font-medium text-gray-900">Location</h4>
                     <p className="text-gray-600">
-                      Highlands, NAIROBI, KE 00100
+                      Nairobi, KE 00100
                     </p>
                   </div>
                 </div>
@@ -264,4 +265,3 @@ const ContactSection = () => {
 };
 
 export default ContactSection;
-

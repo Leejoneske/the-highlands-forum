@@ -1,69 +1,81 @@
-# Welcome to your Lovable project
 
-## Project info
+# The HighLands Forum
 
-**URL**: https://lovable.dev/projects/8f8f7680-d2b7-4a36-80f9-70588eee32c9
+## About The Project
 
-## How can I edit this code?
+The HighLands Forum is a professional portfolio website showcasing the skills, services, and projects of a web developer with over 5 years of experience. The website is built with modern web technologies to deliver a responsive, user-friendly experience across all devices.
 
-There are several ways of editing your application.
+## Developer Profile
 
-**Use Lovable**
+With over 5 years of experience in web and application development, I've had the privilege of working on diverse projects that have sharpened my skills and broadened my perspective. My journey began with a deep curiosity about how digital products work and how they can be optimized to provide the best possible user experience.
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/8f8f7680-d2b7-4a36-80f9-70588eee32c9) and start prompting.
+Over the years, I've worked with startups, mid-sized companies, and enterprise clients, helping them bring their ideas to life through clean, efficient, and maintainable code. I believe in writing code that not only works well today but remains adaptable for tomorrow's challenges.
 
-Changes made via Lovable will be committed automatically to this repo.
+## Technologies Used
 
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with .
+This project is built with:
 
 - Vite
 - TypeScript
 - React
+- React Router Dom
 - shadcn-ui
 - Tailwind CSS
+- EmailJS for contact form functionality
+- Responsive design principles
 
-## How can I deploy this project?
+## Features
 
-Simply open [Lovable](https://lovable.dev/projects/8f8f7680-d2b7-4a36-80f9-70588eee32c9) and click on Share -> Publish.
+- **Responsive Design**: Optimized for all device sizes
+- **Modern UI/UX**: Clean, intuitive interface with smooth animations
+- **Portfolio Showcase**: Highlighting projects and skills
+- **Services Section**: Detailing offered services
+- **Contact Form**: EmailJS integration for direct communication
+- **Performance Optimized**: Fast loading times and smooth navigation
 
-## I want to use a custom domain - is that possible?
+## Getting Started
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### Prerequisites
+
+- Node.js & npm - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+
+### Installation
+
+```sh
+# Clone the repository
+git clone <YOUR_GIT_URL>
+
+# Navigate to the project directory
+cd <YOUR_PROJECT_NAME>
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+```
+
+## Project Structure
+
+- `src/components`: UI components 
+- `src/pages`: Main application pages
+- `src/hooks`: Custom React hooks
+- `src/components/ui`: shadcn UI components
+- `src/lib`: Utility functions
+
+## Contact
+
+- Email: contact@highlandsforum.com
+- Phone: +254 (796) 890-417
+- Location: Nairobi, KE 00100
+- LinkedIn: [Lee Jones Kenya](https://www.linkedin.com/in/lee-jones-kenya-630a00347)
+- GitHub: [Leejoneske](https://github.com/Leejoneske)
+- Twitter: [@LeeJoneske1](https://x.com/LeeJoneske1)
+
+## Acknowledgments
+
+- [shadcn/ui](https://ui.shadcn.com/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Vite](https://vitejs.dev/)
+- [React](https://react.dev/)
+- [TypeScript](https://www.typescriptlang.org/)
