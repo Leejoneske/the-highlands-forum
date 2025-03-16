@@ -19,7 +19,7 @@ const Footer = () => {
             </p>
             <div className="flex space-x-4">
               <a 
-                href="https://github.com/" 
+                href="https://github.com/Leejoneske" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-highlands-primary transition"
@@ -27,7 +27,7 @@ const Footer = () => {
                 <Github size={20} />
               </a>
               <a 
-                href="https://linkedin.com/" 
+                href="https://www.linkedin.com/in/lee-jones-kenya-630a00347" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-highlands-primary transition"
@@ -41,7 +41,7 @@ const Footer = () => {
                 <Mail size={20} />
               </a>
               <a 
-                href="tel:+1234567890" 
+                href="tel:+254796890417" 
                 className="text-gray-600 hover:text-highlands-primary transition"
               >
                 <Phone size={20} />
