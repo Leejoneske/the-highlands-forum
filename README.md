@@ -75,7 +75,7 @@ npm run dev
 ## Contact
 
 - Email: contact@highlandsforum.com
-- Phone: +254 (796) 890-417
+- Phone: +254 796 890 417
 - Location: Nairobi, KE 00100
 - LinkedIn: [Lee Jones Kenya](https://www.linkedin.com/in/lee-jones-kenya-630a00347)
 - GitHub: [Leejoneske](https://github.com/Leejoneske)

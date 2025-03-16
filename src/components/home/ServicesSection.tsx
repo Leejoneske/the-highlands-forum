@@ -40,7 +40,7 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-gray-50" id="services">
       <div className="section-container">
         <div className="text-center mb-16 animate-on-scroll">
           <h2 className="text-3xl font-bold mb-4">Services I Offer</h2>
@@ -55,13 +55,13 @@ const ServicesSection = () => {
           {services.map((service, index) => (
             <div 
               key={index} 
-              className={`animate-on-scroll card-highlight p-6 ${
-                service.isLink ? 'bg-highlands-primary text-white hover:bg-highlands-dark' : ''
+              className={`animate-on-scroll bg-white rounded-lg shadow-md transition-all duration-300 hover:shadow-lg ${
+                service.isLink ? 'bg-highlands-primary text-white hover:bg-highlands-dark' : 'hover:translate-y-[-5px]'
               }`}
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {service.isLink ? (
-                <Link to={service.link || '#'} className="flex flex-col h-full">
+                <Link to={service.link || '#'} className="flex flex-col h-full p-6">
                   <div className="flex items-center justify-between mb-4">
                     <h3 className="text-xl font-semibold">{service.title}</h3>
                     <service.icon className="h-6 w-6" />
@@ -69,13 +69,13 @@ const ServicesSection = () => {
                   <p className="text-white/90">{service.description}</p>
                 </Link>
               ) : (
-                <>
+                <div className="p-6">
                   <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-highlands-light text-highlands-primary">
                     <service.icon className="h-6 w-6" />
                   </div>
                   <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
                   <p className="text-gray-600">{service.description}</p>
-                </>
+                </div>
               )}
             </div>
           ))}
