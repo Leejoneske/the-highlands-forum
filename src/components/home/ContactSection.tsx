@@ -22,56 +22,53 @@ const ContactSection = () => {
     setFormState(prev => ({ ...prev, [name]: value }));
   };
 
-const handleSubmit = async (e: React.FormEvent) => {
-  e.preventDefault();
-  setIsSubmitting(true);
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
 
-  try {
-    const emailjs = (await import('@emailjs/browser')).default;
+    try {
+      const templateParams = {
+        from_name: formState.name,
+        from_email: formState.email,
+        subject: formState.subject,
+        message: formState.message,
+      };
 
-    const templateParams = {
-      from_name: formState.name,
-      from_email: formState.email,
-      subject: formState.subject,
-      message: formState.message,
-    };
+      const response = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
+        templateParams
+      );
 
-    const response = await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID,
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID,
-      templateParams,
-      process.env.NEXT_PUBLIC_EMAILJS_USER_ID
-    );
-
-    if (response.status === 200) {
-      setIsSuccess(true);
-      toast({
-        title: "Message sent!",
-        description: "Thank you for your message. I'll get back to you soon.",
-      });
-
-      // Reset form after 2 seconds
-      setTimeout(() => {
-        setFormState({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
+      if (response.status === 200) {
+        setIsSuccess(true);
+        toast({
+          title: "Message sent!",
+          description: "Thank you for your message. I'll get back to you soon.",
         });
-        setIsSuccess(false);
-      }, 2000);
+
+        // Reset form after 2 seconds
+        setTimeout(() => {
+          setFormState({
+            name: '',
+            email: '',
+            subject: '',
+            message: ''
+          });
+          setIsSuccess(false);
+        }, 2000);
+      }
+    } catch (error) {
+      console.error('Failed to send email:', error);
+      toast({
+        title: "Failed to send message",
+        description: "There was an error sending your message. Please try again later.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
     }
-  } catch (error) {
-    console.error('Failed to send email:', error);
-    toast({
-      title: "Failed to send message",
-      description: "There was an error sending your message. Please try again later.",
-      variant: "destructive",
-    });
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+  };
 
   return (
     <section className="py-20 bg-gray-50" id="contact">
@@ -109,7 +106,7 @@ const handleSubmit = async (e: React.FormEvent) => {
                   <div>
                     <h4 className="font-medium text-gray-900">Phone</h4>
                     <a href="tel:+1234567890" className="text-gray-600 hover:text-highlands-primary transition">
-                      +254 (796) 890-417
+                      +1 (234) 567-890
                     </a>
                   </div>
                 </div>
