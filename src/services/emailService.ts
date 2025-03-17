@@ -22,6 +22,8 @@ export const sendEmail = async (data: EmailFormData): Promise<boolean> => {
       message: data.message,
     };
 
+    console.log('Sending email with params:', templateParams);
+    
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID, 
