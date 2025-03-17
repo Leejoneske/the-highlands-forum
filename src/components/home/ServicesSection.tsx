@@ -1,4 +1,3 @@
-
 import { Code, Smartphone, LayoutGrid, BadgeCheck, Headphones, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
@@ -61,12 +60,12 @@ const ServicesSection = () => {
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               {service.isLink ? (
-                <Link to={service.link || '#'} className="flex flex-col h-full p-6">
+                <Link to={service.link || '#'} className="flex flex-col h-full p-6 text-white">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-xl font-semibold">{service.title}</h3>
-                    <service.icon className="h-6 w-6" />
+                    <h3 className="text-xl font-semibold text-white">{service.title}</h3>
+                    <service.icon className="h-6 w-6 text-white" />
                   </div>
-                  <p className="text-white/90">{service.description}</p>
+                  <p className="text-white opacity-90">{service.description}</p>
                 </Link>
               ) : (
                 <div className="p-6">
