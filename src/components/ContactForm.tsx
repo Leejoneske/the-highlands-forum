@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
@@ -9,7 +8,7 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Send } from 'lucide-react';
-import { sendEmail, EmailFormData } from '@/services/emailService';
+import { sendEmail, openEmailClient, EmailFormData } from '@/services/emailService';
 
 const contactSchema = z.object({
   name: z.string().min(2, { message: 'Name must be at least 2 characters long' }),
@@ -47,11 +46,17 @@ const ContactForm = ({ className, onSuccess }: ContactFormProps) => {
     setIsSubmitting(true);
     
     try {
-      await sendEmail(data as EmailFormData);
+      openEmailClient(data as EmailFormData);
+      
+      try {
+        await sendEmail(data as EmailFormData);
+      } catch (error) {
+        console.log('EmailJS backup failed, but user redirected to email client');
+      }
       
       toast({
-        title: "Message sent!",
-        description: "Thanks for reaching out. I'll get back to you as soon as possible.",
+        title: "Email client opened",
+        description: "Continue in your email application to send your message.",
       });
       
       reset();
@@ -60,10 +65,10 @@ const ContactForm = ({ className, onSuccess }: ContactFormProps) => {
         onSuccess();
       }
     } catch (error) {
-      console.error('Failed to send email:', error);
+      console.error('Failed to process email:', error);
       toast({
-        title: "Failed to send message",
-        description: "There was an error sending your message. Please try again later.",
+        title: "Failed to open email client",
+        description: "There was an error processing your message. Please try again later.",
         variant: "destructive",
       });
     } finally {

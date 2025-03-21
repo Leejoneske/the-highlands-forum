@@ -62,6 +62,9 @@ const Header = () => {
             <Link to="/services" className={`nav-link ${isActive('/services') ? 'active' : ''}`}>
               Services
             </Link>
+            <Link to="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`}>
+              Blog
+            </Link>
             <Link to="/contact">
               <Button className="bg-highlands-primary hover:bg-highlands-dark">Hire Me</Button>
             </Link>
@@ -111,6 +114,13 @@ const Header = () => {
               onClick={closeMenu}
             >
               Services
+            </Link>
+            <Link
+              to="/blog"
+              className={`block py-2 ${isActive('/blog') ? 'text-highlands-primary font-medium' : 'text-gray-700'}`}
+              onClick={closeMenu}
+            >
+              Blog
             </Link>
             <Link to="/contact" onClick={closeMenu}>
               <Button className="w-full bg-highlands-primary hover:bg-highlands-dark">Hire Me</Button>

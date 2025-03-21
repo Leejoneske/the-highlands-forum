@@ -24,6 +24,7 @@ export const sendEmail = async (data: EmailFormData): Promise<boolean> => {
 
     console.log('Sending email with params:', templateParams);
     
+    // Send via EmailJS (backup method)
     const response = await emailjs.send(
       SERVICE_ID,
       TEMPLATE_ID, 
@@ -37,4 +38,19 @@ export const sendEmail = async (data: EmailFormData): Promise<boolean> => {
     console.error('Failed to send email:', error);
     throw error;
   }
+};
+
+// Function to open default email client
+export const openEmailClient = (data: EmailFormData): void => {
+  const subject = encodeURIComponent(data.subject);
+  const body = encodeURIComponent(`
+Name: ${data.name}
+Email: ${data.email}
+
+${data.message}
+  `);
+  
+  // Create mailto link and open it
+  const mailtoLink = `mailto:contact@thehighlandsforum.com?subject=${subject}&body=${body}`;
+  window.location.href = mailtoLink;
 };
