@@ -1,5 +1,5 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 
 /**
  * This component renders a more visually appealing layout when screenshots are captured
@@ -7,8 +7,18 @@ import React from 'react';
  * content when the URL contains ?socialPreview=true.
  */
 const SocialPreviewContainer: React.FC<{ children: React.ReactNode }> = ({ children }) => {
-  // Only apply special styling for social preview mode
-  const isSocialPreview = new URLSearchParams(window.location.search).get('socialPreview') === 'true';
+  const [isSocialPreview, setIsSocialPreview] = useState(false);
+  
+  useEffect(() => {
+    // Check if in social preview mode after component mounts
+    try {
+      const urlParams = new URLSearchParams(window.location.search);
+      setIsSocialPreview(urlParams.get('socialPreview') === 'true');
+    } catch (error) {
+      console.error('Error parsing URL params:', error);
+      setIsSocialPreview(false);
+    }
+  }, []);
   
   if (!isSocialPreview) {
     return <>{children}</>;
