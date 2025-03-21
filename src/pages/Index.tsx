@@ -1,5 +1,5 @@
 
-import SocialLayout from '@/components/SocialLayout';
+import Layout from '@/components/Layout';
 import HeroSection from '@/components/home/HeroSection';
 import AboutPreview from '@/components/home/AboutPreview';
 import ServicesSection from '@/components/home/ServicesSection';
@@ -9,14 +9,14 @@ import ContactSection from '@/components/home/ContactSection';
 
 const Index = () => {
   return (
-    <SocialLayout>
+    <Layout>
       <HeroSection />
       <AboutPreview />
       <ServicesSection />
       <ProjectsSection />
       <BlogPreview />
       <ContactSection />
-    </SocialLayout>
+    </Layout>
   );
 };
 
