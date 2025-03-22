@@ -12,6 +12,14 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/Blog";
 import NotFound from "./pages/NotFound";
 
+// Blog Post Pages
+import FutureWebDevelopment from "./pages/BlogPosts/FutureWebDevelopment";
+import ScalableReactApplications from "./pages/BlogPosts/ScalableReactApplications";
+import ModernCSS from "./pages/BlogPosts/ModernCSS";
+import OptimizingAPIPerformance from "./pages/BlogPosts/OptimizingAPIPerformance";
+import TypeScriptGuide from "./pages/BlogPosts/TypeScriptGuide";
+import GitWorkflows from "./pages/BlogPosts/GitWorkflows";
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -27,6 +35,15 @@ const App = () => (
           <Route path="/services" element={<Services />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          
+          {/* Blog Post Routes */}
+          <Route path="/blog/future-web-development-2023" element={<FutureWebDevelopment />} />
+          <Route path="/blog/building-scalable-react-applications" element={<ScalableReactApplications />} />
+          <Route path="/blog/complete-guide-modern-css" element={<ModernCSS />} />
+          <Route path="/blog/optimizing-api-performance" element={<OptimizingAPIPerformance />} />
+          <Route path="/blog/getting-started-typescript" element={<TypeScriptGuide />} />
+          <Route path="/blog/mastering-git-workflows" element={<GitWorkflows />} />
+          
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

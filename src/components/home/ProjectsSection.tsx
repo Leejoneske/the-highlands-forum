@@ -24,6 +24,13 @@ const projects = [
     category: 'UI/UX Design',
     image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
     link: '/projects/3'
+  },
+  {
+    id: 4,
+    title: 'Telegram Star Store',
+    category: 'Mobile Development',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    link: '/projects/4'
   }
 ];
 

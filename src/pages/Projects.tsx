@@ -34,43 +34,51 @@ const projectsData = [
   },
   {
     id: 4,
-    title: 'Restaurant Booking System',
-    category: 'Web Development',
-    description: 'An online reservation system for restaurants, featuring real-time availability, table management, and customer profiles.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
+    title: 'Telegram Star Store',
+    category: 'Mobile Development',
+    description: 'A Telegram mini-app marketplace where users can buy and sell Telegram Stars and premium features, with secure payment processing and user verification.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
     link: '/projects/4'
   },
   {
     id: 5,
-    title: 'Fitness Tracking App',
-    category: 'Mobile Development',
-    description: 'A mobile app for tracking workouts, nutrition, and progress with personalized recommendations and social features.',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+    title: 'Restaurant Booking System',
+    category: 'Web Development',
+    description: 'An online reservation system for restaurants, featuring real-time availability, table management, and customer profiles.',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
     link: '/projects/5'
   },
   {
     id: 6,
-    title: 'Travel Experience Platform',
-    category: 'UI/UX Design',
-    description: 'A platform connecting travelers with local experiences, featuring intuitive search, booking, and review systems.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    title: 'Fitness Tracking App',
+    category: 'Mobile Development',
+    description: 'A mobile app for tracking workouts, nutrition, and progress with personalized recommendations and social features.',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
     link: '/projects/6'
   },
   {
     id: 7,
-    title: 'Tech Startup Consultation',
-    category: 'Consulting',
-    description: 'Strategic technical consultation for a startup, including architecture planning, tech stack selection, and development roadmap.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    title: 'Travel Experience Platform',
+    category: 'UI/UX Design',
+    description: 'A platform connecting travelers with local experiences, featuring intuitive search, booking, and review systems.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
     link: '/projects/7'
   },
   {
     id: 8,
+    title: 'Tech Startup Consultation',
+    category: 'Consulting',
+    description: 'Strategic technical consultation for a startup, including architecture planning, tech stack selection, and development roadmap.',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    link: '/projects/8'
+  },
+  {
+    id: 9,
     title: 'Educational Platform',
     category: 'Web Development',
     description: 'An interactive learning platform with courses, quizzes, progress tracking, and instructor-student communication tools.',
     image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
-    link: '/projects/8'
+    link: '/projects/9'
   }
 ];
 
