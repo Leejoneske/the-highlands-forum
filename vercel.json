@@ -1,0 +1,15 @@
+
+{
+  "functions": {
+    "src/api/og.ts": {
+      "memory": 3008,
+      "maxDuration": 60
+    }
+  },
+  "routes": [
+    {
+      "src": "/api/og",
+      "dest": "/src/api/og.ts"
+    }
+  ]
+}
