@@ -8,7 +8,6 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   try {
-    // Customize this HTML to match your design
     return new ImageResponse(
       (
         <div
