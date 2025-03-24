@@ -1,4 +1,3 @@
-
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
@@ -11,8 +10,8 @@ export default async function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     
     // Default text
-    const siteName = searchParams.get('siteName') || 'The HighLands Forum';
-    const description = searchParams.get('description') || 'Professional developer portfolio showcasing expertise, projects, and services';
+    const siteName = searchParams.get('siteName') ?? 'The HighLands Forum';
+    const description = searchParams.get('description') ?? 'Professional developer portfolio showcasing expertise, projects, and services';
     
     return new ImageResponse(
       (
@@ -26,7 +25,7 @@ export default async function handler(req: NextRequest) {
             height: '100%',
             backgroundColor: '#f9fafb',
             padding: '40px 50px',
-            fontFamily: 'Inter, sans-serif',
+            fontFamily: '"Inter", sans-serif',
           }}
         >
           <div
@@ -84,7 +83,7 @@ export default async function handler(req: NextRequest) {
         height: 630,
       }
     );
-  } catch (error) {
+  } catch (error: any) {
     console.error('Error generating OG image:', error);
     return new Response('Error generating image', { status: 500 });
   }
