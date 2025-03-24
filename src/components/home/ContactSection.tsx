@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import { Mail, Phone, Home, CheckCircle } from 'lucide-react';
 import { useToast } from '@/components/ui/use-toast';
 import ContactForm from '@/components/ContactForm';
+import NewsletterForm from '@/components/NewsletterForm';
 
 const ContactSection = () => {
   const [isSuccess, setIsSuccess] = useState(false);
@@ -116,6 +117,17 @@ const ContactSection = () => {
                 <ContactForm onSuccess={handleSuccess} />
               )}
             </div>
+          </div>
+        </div>
+
+        {/* Newsletter signup section */}
+        <div className="mt-20">
+          <div className="max-w-2xl mx-auto text-center bg-white p-8 rounded-xl shadow-md animate-on-scroll">
+            <h3 className="text-2xl font-bold mb-4">Stay Updated</h3>
+            <p className="text-gray-700 mb-6">
+              Subscribe to my newsletter for the latest articles, tutorials, and insights.
+            </p>
+            <NewsletterForm className="max-w-md mx-auto" />
           </div>
         </div>
       </div>

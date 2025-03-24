@@ -8,6 +8,12 @@ export const config = {
 
 export default async function handler(req: NextRequest) {
   try {
+    const { searchParams } = new URL(req.url);
+    
+    // Default text
+    const siteName = searchParams.get('siteName') || 'The HighLands Forum';
+    const description = searchParams.get('description') || 'Professional developer portfolio showcasing expertise, projects, and services';
+    
     return new ImageResponse(
       (
         <div
@@ -18,8 +24,8 @@ export default async function handler(req: NextRequest) {
             justifyContent: 'center',
             width: '100%',
             height: '100%',
-            background: 'linear-gradient(to bottom, #1E293B, #0F172A)',
-            padding: '40px',
+            backgroundColor: '#f9fafb',
+            padding: '40px 50px',
             fontFamily: 'Inter, sans-serif',
           }}
         >
@@ -29,74 +35,47 @@ export default async function handler(req: NextRequest) {
               flexDirection: 'column',
               alignItems: 'center',
               justifyContent: 'center',
-              border: '2px solid #3B82F6',
-              padding: '40px',
               borderRadius: '20px',
-              backgroundColor: 'rgba(15,23,42,0.8)',
+              background: 'white',
+              boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
+              padding: '60px',
+              width: '100%',
+              height: '100%',
             }}
           >
             <h1
               style={{
-                fontSize: '60px',
-                fontWeight: 'bold',
-                color: 'white',
+                fontSize: '64px',
+                fontWeight: 700,
+                color: '#333',
                 textAlign: 'center',
                 marginBottom: '20px',
+                lineHeight: 1.1,
               }}
             >
-              The HighLands Forum
+              {siteName}
             </h1>
-            <p
-              style={{
-                fontSize: '30px',
-                color: '#94A3B8',
-                textAlign: 'center',
-                marginBottom: '30px',
-              }}
-            >
-              Professional Developer Portfolio
-            </p>
+            
             <div
               style={{
-                display: 'flex',
-                gap: '20px',
-                marginTop: '20px',
+                width: '80px',
+                height: '4px',
+                backgroundColor: '#3b82f6',
+                marginBottom: '30px',
+              }}
+            />
+            
+            <p
+              style={{
+                fontSize: '28px',
+                color: '#666',
+                textAlign: 'center',
+                maxWidth: '70%',
+                lineHeight: 1.4,
               }}
             >
-              <div
-                style={{
-                  backgroundColor: '#3B82F6',
-                  color: 'white',
-                  padding: '10px 20px',
-                  borderRadius: '10px',
-                  fontSize: '24px',
-                }}
-              >
-                Web Development
-              </div>
-              <div
-                style={{
-                  backgroundColor: '#3B82F6',
-                  color: 'white',
-                  padding: '10px 20px',
-                  borderRadius: '10px',
-                  fontSize: '24px',
-                }}
-              >
-                UI/UX Design
-              </div>
-              <div
-                style={{
-                  backgroundColor: '#3B82F6',
-                  color: 'white',
-                  padding: '10px 20px',
-                  borderRadius: '10px',
-                  fontSize: '24px',
-                }}
-              >
-                API Development
-              </div>
-            </div>
+              {description}
+            </p>
           </div>
         </div>
       ),
@@ -105,8 +84,8 @@ export default async function handler(req: NextRequest) {
         height: 630,
       }
     );
-  } catch (e) {
-    console.error(e);
-    return new Response('Failed to generate OG image', { status: 500 });
+  } catch (error) {
+    console.error('Error generating OG image:', error);
+    return new Response('Error generating image', { status: 500 });
   }
 }

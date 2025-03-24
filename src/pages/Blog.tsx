@@ -1,10 +1,10 @@
-
 import Layout from '@/components/Layout';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Pagination, PaginationContent, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/components/ui/pagination';
 import { CalendarIcon, Clock, User } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import NewsletterForm from '@/components/NewsletterForm';
 
 // Sample blog post data
 const blogPosts = [
@@ -27,7 +27,7 @@ const blogPosts = [
     date: 'May 28, 2023',
     readTime: '8 min read',
     category: 'React',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e475',
     slug: 'building-scalable-react-applications'
   },
   {
@@ -157,16 +157,7 @@ const BlogPage = () => {
             <p className="text-gray-700 mb-8">
               Get the latest articles, tutorials, and insights delivered straight to your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-              <input
-                type="email"
-                placeholder="Your email address"
-                className="rounded-md border border-gray-300 px-4 py-2 flex-grow focus:outline-none focus:ring-2 focus:ring-highlands-primary"
-              />
-              <button className="bg-highlands-primary hover:bg-highlands-dark text-white font-medium py-2 px-6 rounded-md transition-colors">
-                Subscribe
-              </button>
-            </div>
+            <NewsletterForm className="max-w-md mx-auto" />
           </div>
         </div>
       </section>
