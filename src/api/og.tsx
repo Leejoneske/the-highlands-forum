@@ -1,6 +1,9 @@
+
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
+// This is a Vercel Edge Function that generates Open Graph images
+// For Cloudflare Pages, we need to adapt this or create an alternative
 export const config = {
   runtime: 'edge',
 };
@@ -87,4 +90,4 @@ export default async function handler(req: NextRequest) {
     console.error('Error generating OG image:', error);
     return new Response('Error generating image', { status: 500 });
   }
-        }
+}
