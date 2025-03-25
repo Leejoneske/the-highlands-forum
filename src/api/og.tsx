@@ -1,4 +1,3 @@
-
 import { ImageResponse } from '@vercel/og';
 import { NextRequest } from 'next/server';
 
@@ -11,8 +10,8 @@ export default async function handler(req: NextRequest) {
     const { searchParams } = new URL(req.url);
     
     // Default text
-    const siteName = searchParams.get('siteName') ?? 'The HighLands Forum';
-    const description = searchParams.get('description') ?? 'Professional developer portfolio showcasing expertise, projects, and services';
+    const siteName = searchParams.get('siteName') || 'The HighLands Forum';
+    const description = searchParams.get('description') || 'Professional developer portfolio showcasing expertise, projects, and services';
     
     return new ImageResponse(
       (
@@ -26,7 +25,7 @@ export default async function handler(req: NextRequest) {
             height: '100%',
             backgroundColor: '#f9fafb',
             padding: '40px 50px',
-            fontFamily: '"Inter", sans-serif',
+            fontFamily: 'Inter, sans-serif'
           }}
         >
           <div
@@ -40,7 +39,7 @@ export default async function handler(req: NextRequest) {
               boxShadow: '0 8px 30px rgba(0, 0, 0, 0.12)',
               padding: '60px',
               width: '100%',
-              height: '100%',
+              height: '100%'
             }}
           >
             <h1
@@ -50,7 +49,7 @@ export default async function handler(req: NextRequest) {
                 color: '#333',
                 textAlign: 'center',
                 marginBottom: '20px',
-                lineHeight: 1.1,
+                lineHeight: 1.1
               }}
             >
               {siteName}
@@ -61,7 +60,7 @@ export default async function handler(req: NextRequest) {
                 width: '80px',
                 height: '4px',
                 backgroundColor: '#3b82f6',
-                marginBottom: '30px',
+                marginBottom: '30px'
               }}
             />
             
@@ -71,7 +70,7 @@ export default async function handler(req: NextRequest) {
                 color: '#666',
                 textAlign: 'center',
                 maxWidth: '70%',
-                lineHeight: 1.4,
+                lineHeight: 1.4
               }}
             >
               {description}
@@ -81,11 +80,11 @@ export default async function handler(req: NextRequest) {
       ),
       {
         width: 1200,
-        height: 630,
+        height: 630
       }
     );
   } catch (error: any) {
     console.error('Error generating OG image:', error);
     return new Response('Error generating image', { status: 500 });
   }
-}
+        }
