@@ -1,5 +1,5 @@
 
-export async function onRequest(context) {
+export function onRequest(context) {
   try {
     const { searchParams } = new URL(context.request.url);
     
@@ -17,10 +17,6 @@ export async function onRequest(context) {
         </div>
       </div>
     `;
-
-    // For Cloudflare Pages, we'll use a canvas-based approach with Puppeteer
-    // This requires a paid Cloudflare Pages plan with more resources
-    // Alternatively, we can serve a static OG image or use a third-party service
     
     // For now, let's return a text response indicating this is a placeholder
     return new Response(
@@ -31,11 +27,6 @@ export async function onRequest(context) {
         },
       }
     );
-    
-    // In production, you would want to:
-    // 1. Use a static image, or
-    // 2. Integrate with an image generation service like Cloudinary, or
-    // 3. Upgrade to a plan that supports more complex Worker operations
   } catch (error) {
     console.error('Error generating OG image:', error);
     return new Response('Error generating image', { status: 500 });
