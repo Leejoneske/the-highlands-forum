@@ -1,4 +1,3 @@
-
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { ArrowRight } from 'lucide-react';
@@ -8,29 +7,22 @@ const projects = [
     id: 1,
     title: 'E-commerce Platform',
     category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop',
     link: '/projects/1'
   },
   {
     id: 2,
     title: 'Finance Management App',
     category: 'Mobile Development',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop',
     link: '/projects/2'
   },
   {
     id: 3,
     title: 'Healthcare Dashboard',
     category: 'UI/UX Design',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop',
     link: '/projects/3'
-  },
-  {
-    id: 4,
-    title: 'Telegram Star Store',
-    category: 'Mobile Development',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
-    link: '/projects/4'
   }
 ];
 

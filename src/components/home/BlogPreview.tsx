@@ -10,7 +10,7 @@ const blogPosts = [
     excerpt: 'Exploring the most impactful trends and technologies shaping the web development landscape in 2023 and beyond.',
     date: 'June 15, 2023',
     readTime: '5 min read',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop',
     slug: 'future-web-development-2023'
   },
   {
@@ -19,7 +19,7 @@ const blogPosts = [
     excerpt: 'Learn the best practices and architectural patterns for building React applications that can scale with your business needs.',
     date: 'May 28, 2023',
     readTime: '8 min read',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e475?w=800&auto=format&fit=crop',
     slug: 'building-scalable-react-applications'
   },
   {
@@ -28,7 +28,7 @@ const blogPosts = [
     excerpt: 'Discover modern CSS techniques including Flexbox, Grid, and CSS variables to create responsive and maintainable designs.',
     date: 'April 12, 2023',
     readTime: '6 min read',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
     slug: 'complete-guide-modern-css'
   }
 ];

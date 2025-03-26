@@ -1,5 +1,8 @@
 
 {
+  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "outputDirectory": "dist",
+  "installCommand": "npm install --legacy-peer-deps",
   "functions": {
     "src/api/og.ts": {
       "memory": 3008,

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import { ArrowRight } from 'lucide-react';
@@ -13,7 +12,7 @@ const projectsData = [
     title: 'E-commerce Platform',
     category: 'Web Development',
     description: 'A fully responsive e-commerce platform with product management, cart functionality, and secure payment processing.',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7',
+    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop',
     link: '/projects/1'
   },
   {
@@ -21,7 +20,7 @@ const projectsData = [
     title: 'Finance Management App',
     category: 'Mobile Development',
     description: 'A cross-platform mobile application for personal finance tracking, budgeting, and investment monitoring.',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
+    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=800&auto=format&fit=crop',
     link: '/projects/2'
   },
   {
@@ -29,56 +28,32 @@ const projectsData = [
     title: 'Healthcare Dashboard',
     category: 'UI/UX Design',
     description: 'A comprehensive dashboard for healthcare professionals to monitor patient data, appointments, and medical records.',
-    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&auto=format&fit=crop',
     link: '/projects/3'
   },
   {
     id: 4,
     title: 'Telegram Star Store',
     category: 'Mobile Development',
-    description: 'A Telegram mini-app marketplace where users can buy and sell Telegram Stars and premium features, with secure payment processing and user verification.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
+    description: 'A Telegram mini-app marketplace where users can buy and sell Telegram Stars and premium features.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
     link: '/projects/4'
-  },
-  {
-    id: 5,
-    title: 'Restaurant Booking System',
-    category: 'Web Development',
-    description: 'An online reservation system for restaurants, featuring real-time availability, table management, and customer profiles.',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085',
-    link: '/projects/5'
   },
   {
     id: 6,
     title: 'Fitness Tracking App',
     category: 'Mobile Development',
     description: 'A mobile app for tracking workouts, nutrition, and progress with personalized recommendations and social features.',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
+    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=800&auto=format&fit=crop',
     link: '/projects/6'
-  },
-  {
-    id: 7,
-    title: 'Travel Experience Platform',
-    category: 'UI/UX Design',
-    description: 'A platform connecting travelers with local experiences, featuring intuitive search, booking, and review systems.',
-    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475',
-    link: '/projects/7'
   },
   {
     id: 8,
     title: 'Tech Startup Consultation',
     category: 'Consulting',
     description: 'Strategic technical consultation for a startup, including architecture planning, tech stack selection, and development roadmap.',
-    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e2f6',
+    image: 'https://images.unsplash.com/photo-1461749280684-dccba630e475?w=800&auto=format&fit=crop',
     link: '/projects/8'
-  },
-  {
-    id: 9,
-    title: 'Educational Platform',
-    category: 'Web Development',
-    description: 'An interactive learning platform with courses, quizzes, progress tracking, and instructor-student communication tools.',
-    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
-    link: '/projects/9'
   }
 ];
 

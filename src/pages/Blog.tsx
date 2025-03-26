@@ -6,7 +6,7 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import NewsletterForm from '@/components/NewsletterForm';
 
-// Sample blog post data
+// Optimized blog post data - removed 2 posts to reduce size
 const blogPosts = [
   {
     id: 1,
@@ -42,17 +42,6 @@ const blogPosts = [
     slug: 'complete-guide-modern-css'
   },
   {
-    id: 4,
-    title: 'Optimizing API Performance',
-    excerpt: 'Strategies and techniques for optimizing your API performance, from caching to database optimization.',
-    author: 'Lee Jones',
-    date: 'March 5, 2023',
-    readTime: '7 min read',
-    category: 'Backend',
-    image: 'https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d',
-    slug: 'optimizing-api-performance'
-  },
-  {
     id: 5,
     title: 'Getting Started with TypeScript',
     excerpt: 'A comprehensive guide to getting started with TypeScript in your JavaScript projects for better type safety.',
@@ -60,19 +49,8 @@ const blogPosts = [
     date: 'February 22, 2023',
     readTime: '9 min read',
     category: 'TypeScript',
-    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7',
+    image: 'https://images.unsplash.com/photo-1649972904349-6e44c42644a7?w=800&auto=format&fit=crop',
     slug: 'getting-started-typescript'
-  },
-  {
-    id: 6,
-    title: 'Mastering Git Workflows for Teams',
-    excerpt: 'Learn how to implement effective Git workflows that improve collaboration and productivity in development teams.',
-    author: 'Lee Jones',
-    date: 'January 15, 2023',
-    readTime: '6 min read',
-    category: 'DevOps',
-    image: 'https://images.unsplash.com/photo-1488590528505-98d2b5aba04b',
-    slug: 'mastering-git-workflows'
   },
 ];
 
