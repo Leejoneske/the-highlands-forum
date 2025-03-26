@@ -1,7 +1,0 @@
-[build]
-command = "npm install && npm run build"
-upload_dir = ".next/static"
-node_compat = true  # Enable Node.js compatibility
-
-[[functions]]
-directory = "none"

@@ -1,15 +1,20 @@
 
 {
-  "functions": {
-    "src/api/og.ts": {
-      "memory": 3008,
-      "maxDuration": 60
-    }
-  },
-  "routes": [
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/index.html" }
+  ],
+  "headers": [
     {
-      "src": "/api/og",
-      "dest": "/src/api/og.ts"
+      "source": "/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=3600" }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
     }
   ]
 }

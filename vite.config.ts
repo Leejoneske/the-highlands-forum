@@ -20,7 +20,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    // Optimize for Cloudflare Pages
+    // Optimize for Vercel
     sourcemap: true,
     minify: 'terser',
     rollupOptions: {
