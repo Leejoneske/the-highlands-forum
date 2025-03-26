@@ -9,16 +9,10 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "jsx": "preserve",
-    "lib": ["dom", "dom.iterable", "esnext"],
-    "module": "esnext",
-    "target": "ES2020",
-    "skipLibCheck": true,
-    "strict": false,
-    "esModuleInterop": true,
-    "allowJs": true,
     "noImplicitAny": false,
     "noUnusedParameters": false,
+    "skipLibCheck": true,
+    "allowJs": true,
     "noUnusedLocals": false,
     "strictNullChecks": false
   }

@@ -1,5 +1,7 @@
 
-// Service credentials for demo purposes
+import emailjs from '@emailjs/browser';
+
+// EmailJS credentials
 const SERVICE_ID = "service_y16i2wj";
 const TEMPLATE_ID = "template_wjpihiq";
 const PUBLIC_KEY = "FGh3NiEkM9YVJ0pB0";
@@ -50,16 +52,28 @@ export const subscribeToNewsletter = async (email: string): Promise<boolean> => 
       throw new Error('Email already subscribed');
     }
 
-    console.log('Subscribing email:', email);
+    // Send confirmation email using EmailJS
+    const templateParams = {
+      from_name: "The HighLands Forum",
+      to_email: email,
+      subject: "Newsletter Subscription Confirmation",
+      message: `Thank you for subscribing to The HighLands Forum newsletter! You'll now receive our latest articles, tutorials, and insights straight to your inbox.`,
+    };
+
+    const response = await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+      PUBLIC_KEY
+    );
+
+    if (response.status === 200) {
+      // Save subscriber
+      saveSubscriberToLocalStorage(email);
+      return true;
+    }
     
-    // In a real application, we would send this to a server
-    // For now, just save to localStorage and return success
-    saveSubscriberToLocalStorage(email);
-    
-    // Simulate sending a confirmation email
-    console.log('Confirmation email sent to:', email);
-    
-    return true;
+    return false;
   } catch (error) {
     console.error('Failed to subscribe to newsletter:', error);
     throw error;
