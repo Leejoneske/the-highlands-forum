@@ -4,7 +4,7 @@
   "outputDirectory": "dist",
   "installCommand": "npm install --legacy-peer-deps",
   "functions": {
-    "src/api/og.tsx": {
+    "api/og.tsx": {
       "memory": 1024,
       "maxDuration": 10
     }
@@ -12,7 +12,7 @@
   "routes": [
     {
       "src": "/api/og",
-      "dest": "/src/api/og.tsx"
+      "dest": "/api/og.tsx"
     }
   ]
 }
