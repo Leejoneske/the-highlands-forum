@@ -19,8 +19,6 @@ const queryClient = new QueryClient();
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
-      <Toaster />
-      <Sonner />
       <BrowserRouter>
         <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
           <Routes>
@@ -36,6 +34,8 @@ const App = () => (
           </Routes>
         </Suspense>
       </BrowserRouter>
+      <Toaster />
+      <Sonner />
     </TooltipProvider>
   </QueryClientProvider>
 );
