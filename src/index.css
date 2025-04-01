@@ -14,16 +14,16 @@
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
 
-    --primary: 210 30% 20%;
+    --primary: 221 83% 53%;
     --primary-foreground: 210 40% 98%;
 
-    --secondary: 195 40% 90%;
+    --secondary: 217 91% 60%;
     --secondary-foreground: 222.2 47.4% 11.2%;
 
     --muted: 210 40% 96.1%;
     --muted-foreground: 215.4 16.3% 46.9%;
 
-    --accent: 199 30% 85%;
+    --accent: 210 40% 96.1%;
     --accent-foreground: 222.2 47.4% 11.2%;
 
     --destructive: 0 84.2% 60.2%;
@@ -36,12 +36,19 @@
     --radius: 0.5rem;
 
     --sidebar-background: 0 0% 98%;
+
     --sidebar-foreground: 240 5.3% 26.1%;
+
     --sidebar-primary: 240 5.9% 10%;
+
     --sidebar-primary-foreground: 0 0% 98%;
+
     --sidebar-accent: 240 4.8% 95.9%;
+
     --sidebar-accent-foreground: 240 5.9% 10%;
+
     --sidebar-border: 220 13% 91%;
+
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
@@ -74,15 +81,15 @@
 }
 
 .gradient-text {
-  @apply bg-gradient-to-r from-rapidway-dark via-rapidway-medium to-rapidway-light bg-clip-text text-transparent;
+  @apply bg-gradient-to-r from-highlands-primary via-highlands-secondary to-highlands-accent bg-clip-text text-transparent;
 }
 
 .btn-primary {
-  @apply bg-rapidway-dark hover:bg-opacity-90 text-white font-medium py-2 px-6 rounded-md transition duration-300;
+  @apply bg-highlands-primary hover:bg-highlands-dark text-white font-medium py-2 px-6 rounded-md transition duration-300;
 }
 
 .btn-secondary {
-  @apply bg-transparent hover:bg-rapidway-light border border-rapidway-dark text-rapidway-dark hover:text-rapidway-dark font-medium py-2 px-6 rounded-md transition duration-300;
+  @apply bg-transparent hover:bg-highlands-light border border-highlands-primary text-highlands-primary hover:text-highlands-primary font-medium py-2 px-6 rounded-md transition duration-300;
 }
 
 .card-highlight {
@@ -90,9 +97,9 @@
 }
 
 .nav-link {
-  @apply text-gray-700 hover:text-rapidway-dark transition-colors duration-300;
+  @apply text-gray-700 hover:text-highlands-primary transition-colors duration-300;
 }
 
 .nav-link.active {
-  @apply text-rapidway-dark font-medium;
+  @apply text-highlands-primary font-medium;
 }

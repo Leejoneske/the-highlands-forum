@@ -28,14 +28,14 @@ const ProjectsSection = () => {
         <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8">
           <div>
             <h2 className="text-2xl font-bold mb-3">Featured Projects</h2>
-            <div className="w-16 h-1 bg-rapidway-dark mb-4"></div>
+            <div className="w-16 h-1 bg-highlands-primary mb-4"></div>
             <p className="text-gray-700 max-w-md">
               Explore some of my recent work showcasing my development skills.
             </p>
           </div>
           
           <Link to="/projects">
-            <Button variant="outline" className="border-rapidway-dark text-rapidway-dark hover:bg-rapidway-light">
+            <Button variant="outline" className="border-highlands-primary text-highlands-primary hover:bg-highlands-light">
               View All Projects
             </Button>
           </Link>
@@ -58,11 +58,11 @@ const ProjectsSection = () => {
                   />
                 </div>
                 <div className="p-4">
-                  <span className="text-sm text-rapidway-dark font-medium">{project.category}</span>
-                  <h3 className="text-lg font-semibold mt-2 mb-3 group-hover:text-rapidway-dark transition-colors">
+                  <span className="text-sm text-highlands-secondary font-medium">{project.category}</span>
+                  <h3 className="text-lg font-semibold mt-2 mb-3 group-hover:text-highlands-primary transition-colors">
                     {project.title}
                   </h3>
-                  <div className="flex items-center text-rapidway-dark font-medium">
+                  <div className="flex items-center text-highlands-primary font-medium">
                     <span>View Project</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                   </div>

@@ -5,8 +5,8 @@
   "installCommand": "npm install --legacy-peer-deps",
   "functions": {
     "api/og.tsx": {
-      "memory": 512,
-      "maxDuration": 5
+      "memory": 1024,
+      "maxDuration": 10
     }
   },
   "routes": [
