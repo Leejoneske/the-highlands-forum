@@ -29,12 +29,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				highlands: {
-					primary: '#1E3A8A',
-					secondary: '#3B82F6',
-					accent: '#60A5FA',
-					light: '#EFF6FF',
-					dark: '#172554',
+				rapidway: {
+					dark: '#293239',
+					medium: '#D2E5E9',
+					light: '#E3ECED',
+					white: '#FFFFFF',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
