@@ -1,18 +1,16 @@
 
 {
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "npm install && npm run build",
   "outputDirectory": "dist",
-  "installCommand": "npm install --legacy-peer-deps",
-  "functions": {
-    "api/og.tsx": {
-      "memory": 512,
-      "maxDuration": 5
-    }
-  },
+  "installCommand": "npm install",
   "routes": [
     {
       "src": "/api/og",
       "dest": "/api/og.tsx"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
     }
   ]
 }
