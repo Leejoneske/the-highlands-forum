@@ -15,6 +15,14 @@ const Contact = lazy(() => import("./pages/Contact"));
 const Blog = lazy(() => import("./pages/Blog"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
+// Import blog post components
+const FutureWebDevelopment = lazy(() => import("./pages/BlogPosts/FutureWebDevelopment"));
+const ScalableReactApplications = lazy(() => import("./pages/BlogPosts/ScalableReactApplications"));
+const ModernCSS = lazy(() => import("./pages/BlogPosts/ModernCSS"));
+const TypeScriptGuide = lazy(() => import("./pages/BlogPosts/TypeScriptGuide"));
+const GitWorkflows = lazy(() => import("./pages/BlogPosts/GitWorkflows"));
+const OptimizingAPIPerformance = lazy(() => import("./pages/BlogPosts/OptimizingAPIPerformance"));
+
 const queryClient = new QueryClient();
 
 const App = () => (
@@ -31,6 +39,13 @@ const App = () => (
             <Route path="/services" element={<Services />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/blog" element={<Blog />} />
+            {/* Blog post routes */}
+            <Route path="/blog/future-web-development-2023" element={<FutureWebDevelopment />} />
+            <Route path="/blog/building-scalable-react-applications" element={<ScalableReactApplications />} />
+            <Route path="/blog/complete-guide-modern-css" element={<ModernCSS />} />
+            <Route path="/blog/typescript-guide" element={<TypeScriptGuide />} />
+            <Route path="/blog/git-workflows" element={<GitWorkflows />} />
+            <Route path="/blog/optimizing-api-performance" element={<OptimizingAPIPerformance />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
