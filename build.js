@@ -1,10 +1,13 @@
 
-// Simple build script for Vercel deployment
+// Improved build script for Vercel deployment
 const { execSync } = require('child_process');
 
 try {
+  console.log('Installing dependencies...');
+  execSync('npm install --legacy-peer-deps', { stdio: 'inherit' });
+  
   console.log('Installing Vite locally...');
-  execSync('npm install vite@latest --save-dev', { stdio: 'inherit' });
+  execSync('npm install vite@latest @vitejs/plugin-react-swc --save-dev', { stdio: 'inherit' });
   
   console.log('Building project with Vite...');
   execSync('npx vite build', { stdio: 'inherit' });

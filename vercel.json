@@ -1,13 +1,9 @@
 
 {
-  "buildCommand": "npm install --legacy-peer-deps && npm run build",
+  "buildCommand": "node build.js",
   "outputDirectory": "dist",
   "installCommand": "npm install --legacy-peer-deps",
   "routes": [
-    {
-      "src": "/api/og",
-      "dest": "/api/og.js"
-    },
     {
       "src": "/(.*)",
       "dest": "/index.html"
