@@ -1,6 +1,6 @@
 
 // Improved build script for Vercel deployment
-const { execSync } = require('child_process');
+import { execSync } from 'child_process';
 
 try {
   console.log('Installing dependencies...');
