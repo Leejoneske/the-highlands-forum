@@ -3,8 +3,10 @@
 import { execSync } from 'child_process';
 
 try {
-  console.log('Installing dependencies...');
-  execSync('npm install --legacy-peer-deps', { stdio: 'inherit' });
+  console.log('Beginning build process...');
+  
+  console.log('Installing dependencies (ignoring problematic packages)...');
+  execSync('npm install --legacy-peer-deps --no-save', { stdio: 'inherit' });
   
   console.log('Installing Vite locally...');
   execSync('npm install vite@latest @vitejs/plugin-react-swc --legacy-peer-deps --save-dev', { stdio: 'inherit' });
