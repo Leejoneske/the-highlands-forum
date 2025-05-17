@@ -9,7 +9,7 @@ try {
   execSync('npm install --legacy-peer-deps --no-save', { stdio: 'inherit' });
   
   console.log('Installing Vite locally...');
-  execSync('npm install vite@latest @vitejs/plugin-react-swc --legacy-peer-deps --save-dev', { stdio: 'inherit' });
+  execSync('npm install vite@latest @vitejs/plugin-react-swc --legacy-peer-deps --no-save', { stdio: 'inherit' });
   
   console.log('Building project with Vite...');
   execSync('npx vite build', { stdio: 'inherit' });
