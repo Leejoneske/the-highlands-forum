@@ -28,4 +28,23 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  build: {
+    // Optimize for Vercel deployment
+    sourcemap: false,
+    minify: 'terser',
+    chunkSizeWarningLimit: 1600,
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: ['@/components/ui'],
+        },
+      },
+    },
+  },
 }));
