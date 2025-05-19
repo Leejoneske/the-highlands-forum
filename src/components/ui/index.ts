@@ -12,7 +12,6 @@ export * from "./drawer";
 export * from "./form";
 export * from "./hover-card";
 export * from "./input";
-export * from "./input-otp";
 export * from "./label";
 export * from "./navigation-menu";
 export * from "./pagination";
@@ -23,3 +22,18 @@ export * from "./separator";
 export * from "./sonner";
 export * from "./textarea";
 export * from "./toast";
+
+// Export input-otp components separately to avoid name conflicts
+import { 
+  InputOTP, 
+  InputOTPGroup, 
+  InputOTPSlot, 
+  InputOTPSeparator 
+} from "./input-otp";
+
+export {
+  InputOTP,
+  InputOTPGroup,
+  InputOTPSlot,
+  InputOTPSeparator
+};
