@@ -5,6 +5,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense } from "react";
+import { ThemeProvider } from "next-themes";
 
 // Use lazy loading for all pages
 const Index = lazy(() => import("./pages/Index"));
@@ -27,30 +28,32 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/blog" element={<Blog />} />
-            {/* Blog post routes */}
-            <Route path="/blog/future-web-development-2023" element={<FutureWebDevelopment />} />
-            <Route path="/blog/building-scalable-react-applications" element={<ScalableReactApplications />} />
-            <Route path="/blog/complete-guide-modern-css" element={<ModernCSS />} />
-            <Route path="/blog/typescript-guide" element={<TypeScriptGuide />} />
-            <Route path="/blog/git-workflows" element={<GitWorkflows />} />
-            <Route path="/blog/optimizing-api-performance" element={<OptimizingAPIPerformance />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </Suspense>
-      </BrowserRouter>
-    </TooltipProvider>
+    <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/services" element={<Services />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/blog" element={<Blog />} />
+              {/* Blog post routes */}
+              <Route path="/blog/future-web-development-2023" element={<FutureWebDevelopment />} />
+              <Route path="/blog/building-scalable-react-applications" element={<ScalableReactApplications />} />
+              <Route path="/blog/complete-guide-modern-css" element={<ModernCSS />} />
+              <Route path="/blog/typescript-guide" element={<TypeScriptGuide />} />
+              <Route path="/blog/git-workflows" element={<GitWorkflows />} />
+              <Route path="/blog/optimizing-api-performance" element={<OptimizingAPIPerformance />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
+        </BrowserRouter>
+      </TooltipProvider>
+    </ThemeProvider>
   </QueryClientProvider>
 );
 
