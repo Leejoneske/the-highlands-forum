@@ -53,8 +53,8 @@ function Calendar({
         ...classNames,
       }}
       components={{
-        IconLeft: ({ ...props }) => <ChevronLeft className="h-4 w-4" />,
-        IconRight: ({ ...props }) => <ChevronRight className="h-4 w-4" />
+        // Remove the custom components for now as they're causing the error
+        // Let's use the default navigation buttons from react-day-picker
       }}
       {...props}
     />
