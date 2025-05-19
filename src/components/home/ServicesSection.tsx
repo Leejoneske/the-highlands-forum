@@ -1,11 +1,11 @@
 
-import { CodeSquare, Layers, LineChart, Smartphone, Globe, PenTool, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { Square, Layers, LineChart, Smartphone, Globe, PenTool, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const services = [
   {
-    icon: <CodeSquare className="h-12 w-12 text-highlands-primary" />,
+    icon: <Square className="h-12 w-12 text-highlands-primary" />,
     title: 'Web Development',
     description: 'Custom web applications built with modern technologies like React, Vue.js, and Node.js.'
   },
