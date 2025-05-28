@@ -24,7 +24,25 @@ const TypeScriptGuide = lazy(() => import("./pages/BlogPosts/TypeScriptGuide"));
 const GitWorkflows = lazy(() => import("./pages/BlogPosts/GitWorkflows"));
 const OptimizingAPIPerformance = lazy(() => import("./pages/BlogPosts/OptimizingAPIPerformance"));
 
-const queryClient = new QueryClient();
+// Create query client with improved default options
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      retry: 1,
+    },
+  },
+});
+
+// Improved loading component
+const LoadingFallback = () => (
+  <div className="flex h-screen items-center justify-center bg-gradient-to-b from-blue-50 to-white">
+    <div className="text-center">
+      <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-highlands-primary mx-auto mb-4"></div>
+      <p className="text-gray-600">Loading...</p>
+    </div>
+  </div>
+);
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
@@ -33,7 +51,7 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Suspense fallback={<div className="flex h-screen items-center justify-center">Loading...</div>}>
+          <Suspense fallback={<LoadingFallback />}>
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/about" element={<About />} />

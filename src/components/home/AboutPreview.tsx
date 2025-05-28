@@ -1,7 +1,8 @@
 
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
-import { Check } from 'lucide-react';
+import { Check, Loader2 } from 'lucide-react';
+import { useState } from 'react';
 
 const skills = [
   'Frontend Development', 
@@ -11,17 +12,43 @@ const skills = [
 ];
 
 const AboutPreview = () => {
+  const [imageLoading, setImageLoading] = useState(true);
+  const [imageError, setImageError] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoading(false);
+  };
+
+  const handleImageError = () => {
+    setImageLoading(false);
+    setImageError(true);
+  };
+
   return (
     <section className="py-16 bg-white">
       <div className="section-container">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
           <div className="relative animate-on-scroll">
-            <div className="aspect-square max-w-sm mx-auto lg:mx-0 bg-gray-100 rounded-2xl overflow-hidden shadow-md">
-              <img 
-                src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" 
-                alt="Developer" 
-                className="w-full h-full object-cover"
-              />
+            <div className="aspect-square max-w-sm mx-auto lg:mx-0 bg-gray-100 rounded-2xl overflow-hidden shadow-md relative">
+              {imageLoading && (
+                <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+                  <Loader2 className="h-8 w-8 animate-spin text-highlands-primary" />
+                </div>
+              )}
+              {!imageError ? (
+                <img 
+                  src="https://images.unsplash.com/photo-1531297484001-80022131f5a1" 
+                  alt="Professional developer workspace"
+                  className="w-full h-full object-cover"
+                  onLoad={handleImageLoad}
+                  onError={handleImageError}
+                  loading="lazy"
+                />
+              ) : (
+                <div className="w-full h-full flex items-center justify-center bg-gray-200 text-gray-500">
+                  <span>Image unavailable</span>
+                </div>
+              )}
             </div>
           </div>
           
@@ -37,8 +64,8 @@ const AboutPreview = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-6">
               {skills.map((skill, index) => (
                 <div key={index} className="flex items-center">
-                  <Check className="text-highlands-primary mr-2" size={16} />
-                  <span>{skill}</span>
+                  <Check className="text-highlands-primary mr-2 flex-shrink-0" size={16} />
+                  <span className="text-sm sm:text-base">{skill}</span>
                 </div>
               ))}
             </div>
