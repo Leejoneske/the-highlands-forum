@@ -1,3 +1,4 @@
+
 import { useState } from 'react';
 import Layout from '@/components/Layout';
 import { ArrowRight } from 'lucide-react';
@@ -9,10 +10,10 @@ const categories = ['All', 'Web Development', 'Mobile Development', 'UI/UX Desig
 const projectsData = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    category: 'Web Development',
-    description: 'A fully responsive e-commerce platform with product management, cart functionality, and secure payment processing.',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&auto=format&fit=crop',
+    title: 'Telegram StarStore App',
+    category: 'Mobile Development',
+    description: 'A Telegram mini-app marketplace where users can buy and sell Telegram Stars with ease. Features secure transactions, user-friendly interface, and seamless integration with Telegram ecosystem.',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&auto=format&fit=crop',
     link: '/projects/1'
   },
   {

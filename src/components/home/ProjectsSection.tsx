@@ -7,9 +7,9 @@ import { ArrowRight } from 'lucide-react';
 const projects = [
   {
     id: 1,
-    title: 'E-commerce Platform',
-    category: 'Web Development',
-    image: 'https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=600&auto=format&fit=crop',
+    title: 'Telegram StarStore App',
+    category: 'Mobile Development',
+    image: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&auto=format&fit=crop',
     link: '/projects'
   },
   {
