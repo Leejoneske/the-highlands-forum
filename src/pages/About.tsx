@@ -42,7 +42,7 @@ const About = () => {
             {/* Circle Favicon Image */}
             <div className="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mx-auto mb-6">
               <img 
-                src="/favicon.png" 
+                src="/Admin.png" 
                 alt="The HighLands Forum" 
                 className="w-16 h-16 rounded-full object-cover"
               />
