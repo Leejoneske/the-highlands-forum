@@ -94,6 +94,16 @@ const About = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
+              
+              {/* Circle Favicon Image */}
+              <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center z-10">
+                <img 
+                  src="/favicon.png" 
+                  alt="The HighLands Forum" 
+                  className="w-10 h-10 rounded-full object-cover"
+                />
+              </div>
+              
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-highlands-accent rounded-full opacity-50 z-0"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-highlands-primary rounded-full opacity-30 z-0"></div>
             </div>
@@ -128,8 +138,12 @@ const About = () => {
             ))}
           </div>
           
-          <div className="mt-12 text-center animate-on-scroll">
-            <a href="#" className="inline-flex items-center text-highlands-primary font-medium hover:underline">
+            <div className="mt-12 text-center animate-on-scroll">
+            <a 
+              href="/resume.pdf" 
+              download="Lee_Jones_Resume.pdf"
+              className="inline-flex items-center text-highlands-primary font-medium hover:underline"
+            >
               <Download className="mr-2 h-5 w-5" />
               Download My Resume
             </a>

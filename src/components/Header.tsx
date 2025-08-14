@@ -1,8 +1,9 @@
 
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Github, Linkedin } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import ThemeToggle from '@/components/ui/theme-toggle';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -49,7 +50,7 @@ const Header = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-8">
+          <nav className="hidden md:flex items-center space-x-6">
             <Link to="/" className={`nav-link ${isActive('/') ? 'active' : ''}`}>
               Home
             </Link>
@@ -65,9 +66,29 @@ const Header = () => {
             <Link to="/blog" className={`nav-link ${isActive('/blog') ? 'active' : ''}`}>
               Blog
             </Link>
-            <Link to="/contact">
-              <Button className="bg-highlands-primary hover:bg-highlands-dark">Hire Me</Button>
-            </Link>
+            
+            <div className="flex items-center space-x-3">
+              <a 
+                href="https://github.com/Leejoneske" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-highlands-primary transition"
+              >
+                <Github size={18} />
+              </a>
+              <a 
+                href="https://www.linkedin.com/in/lee-jones-kenya-630a00347" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-gray-600 hover:text-highlands-primary transition"
+              >
+                <Linkedin size={18} />
+              </a>
+              <ThemeToggle />
+              <Link to="/contact">
+                <Button className="bg-highlands-primary hover:bg-highlands-dark">Hire Me</Button>
+              </Link>
+            </div>
           </nav>
 
           {/* Mobile Navigation Toggle */}
