@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Layout from '@/components/Layout';
 import { Button } from '@/components/ui/button';
 import { Check, Briefcase, ArrowRight, Download } from 'lucide-react';
+import { downloadResume } from '@/utils/resumeGenerator';
 
 const skills = [
   'JavaScript/TypeScript', 'React', 'Node.js', 'Express', 'Next.js', 'React Native',
@@ -38,6 +39,14 @@ const About = () => {
       <section className="pt-24 pb-16 bg-gradient-to-b from-blue-50 to-white">
         <div className="section-container">
           <div className="text-center animate-on-scroll">
+            {/* Circle Favicon Image */}
+            <div className="w-24 h-24 bg-white rounded-full shadow-lg flex items-center justify-center mx-auto mb-6">
+              <img 
+                src="/favicon.png" 
+                alt="The HighLands Forum" 
+                className="w-16 h-16 rounded-full object-cover"
+              />
+            </div>
             <h1 className="text-4xl md:text-5xl font-bold mb-6">About Me</h1>
             <div className="w-20 h-1 bg-highlands-primary mx-auto mb-8"></div>
             <p className="text-lg text-gray-700 max-w-3xl mx-auto">
@@ -95,15 +104,6 @@ const About = () => {
                 />
               </div>
               
-              {/* Circle Favicon Image */}
-              <div className="absolute top-4 right-4 w-16 h-16 bg-white rounded-full shadow-lg flex items-center justify-center z-10">
-                <img 
-                  src="/favicon.png" 
-                  alt="The HighLands Forum" 
-                  className="w-10 h-10 rounded-full object-cover"
-                />
-              </div>
-              
               <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-highlands-accent rounded-full opacity-50 z-0"></div>
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-highlands-primary rounded-full opacity-30 z-0"></div>
             </div>
@@ -139,14 +139,13 @@ const About = () => {
           </div>
           
             <div className="mt-12 text-center animate-on-scroll">
-            <a 
-              href="/resume.pdf" 
-              download="Lee_Jones_Resume.pdf"
+            <button 
+              onClick={downloadResume}
               className="inline-flex items-center text-highlands-primary font-medium hover:underline"
             >
               <Download className="mr-2 h-5 w-5" />
               Download My Resume
-            </a>
+            </button>
           </div>
         </div>
       </section>
